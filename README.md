@@ -1,6 +1,5 @@
 # BestMonitor
-
-![Screenshot](screenshot.png =250x250)
+<img src="/screenshot.png" width="550" height="640">
 
 Open source project to watch a certain product and get a notification on discord when said product is available. Has somewhat of a GUI interface with an easy setup.
 
