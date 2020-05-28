@@ -10,14 +10,16 @@ Have the following installed:
 
 [Node (LTS)](https://nodejs.org/en/) 12.17.0
 
+[Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+
 ### Installing
 
 ```
 git clone https://github.com/MrSirDev/bestbuy-open-source.git
 
-npm install or npm i
+yarn add
 
-npm start or npm dev
+yarn start or yarn dev
 ```
 
 ### Setup
