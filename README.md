@@ -1,4 +1,5 @@
 # BestMonitor
+
 <img src="/screenshot.png" width="550" height="640">
 
 Open source project to watch a certain product and get a notification on discord when said product is available. Has somewhat of a GUI interface with an easy setup.
@@ -9,7 +10,7 @@ Have the following installed:
 
 [Node (LTS)](https://nodejs.org/en/) 12.17.0
 
-[Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+[Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 ### Installing
 
