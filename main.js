@@ -75,9 +75,9 @@ const findProduct = async (sku, hook, attempt = 1) => {
     );
 
     setTimeout(function () {
-      let dayMillseconds = 1000 * 30;
+      let dayMillseconds = 1000 * 60;
       setInterval(function () {
-        // repeat this every 30 seconds
+        // repeat this every minute
         findProduct(sku, hook, attempt + 1);
       }, dayMillseconds);
     }, 0);
