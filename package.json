@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "electron-store": "^5.1.1",
+    "jquery": "^3.5.1",
+    "moment": "^2.26.0",
+    "puppeteer": "^3.1.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-is-dev": "^1.2.0",
+    "nodemon": "^2.0.4"
+  },
+  "name": "bestbuy-open-source",
+  "version": "1.0.0",
+  "description": "Open source bestbuy monitor and checkout",
+  "main": "main.js",
+  "repository": "git@github.com-mrsirdev:MrSirDev/bestbuy-open-source.git",
+  "author": "@MrSirDev",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron ."
+  }
+}

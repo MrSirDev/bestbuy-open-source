@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/all.min.css" />
+    <link rel="stylesheet" href="styles/materialize.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>BestBuy Monitor</title>
+  </head>
+  <body>
+    <div class="drag-region" />
+    <div class="container center-align">
+      <h3>BestMonitor</h3>
+      <p>By: @MrSirDev</p>
+      <p>
+        Enter a SKU to be notified on discord when product is available. (retrys
+        every 30 seconds)
+      </p>
+      <form id="image-form">
+        <div class="file-field input-field">
+          <div class="file-path-wrapper">
+            <input
+              id="link"
+              class="file-path validate"
+              type="text"
+              placeholder="Enter SKU"
+            />
+          </div>
+        </div>
+
+        <div class="file-field input-field">
+          <div class="file-path-wrapper">
+            <input
+              id="webhook"
+              class="file-path validate"
+              type="text"
+              placeholder="Enter Discord Webhook"
+            />
+          </div>
+        </div>
+
+        <input type="submit" value="Run" class="btn black" />
+        <div class="card output">
+          <div class="card-content">Log: <span id="output-path"></span></div>
+        </div>
+      </form>
+    </div>
+    <script src="js/materialize.min.js"></script>
+    <script>
+      const path = require("path");
+      const os = require("os");
+      const { ipcRenderer } = require("electron");
+
+      const form = document.getElementById("image-form");
+      const link = document.getElementById("link");
+      const discord = document.getElementById("webhook");
+
+      //on submit
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const sku = link.value;
+        const hook = discord.value;
+
+        ipcRenderer.send("started:task", { sku, hook });
+      });
+
+      //on Done
+      ipcRenderer.on("running:task", (e, text) => {
+        console.log(text);
+        document.getElementById("output-path").innerText = text;
+      });
+    </script>
+  </body>
+</html>
