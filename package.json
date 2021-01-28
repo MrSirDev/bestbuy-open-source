@@ -4,7 +4,7 @@
     "moment": "^2.26.0"
   },
   "devDependencies": {
-    "electron": "^9.0.0",
+    "electron": "^9.4.0",
     "nodemon": "^2.0.4"
   },
   "name": "bestbuy-open-source",
